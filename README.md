@@ -38,6 +38,6 @@ In this strategy, the Deployment selects a Pod with the old programming, deactiv
 
 8) v1 & v2 progression is demonstraed in the screenshots
 
-
+9) Perform a Smoke test by curl to the load balancer URL to determine the success of deployment 
 
 Anurag Jain 
