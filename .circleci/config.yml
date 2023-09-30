@@ -139,7 +139,7 @@ jobs:
             export DNS=$(aws elb describe-load-balancers --query LoadBalancerDescriptions[*].DNSName --output text)
             export URL="http://${DNS}"
             echo "URL = ${URL}"
-            if curl -s "${URL}" | grep "udacity"
+            if curl -s "${URL}:5000" | grep "udacity"
             then
               echo "Capstone Deployment Successful"
             else
