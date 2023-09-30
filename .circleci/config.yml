@@ -103,7 +103,7 @@ jobs:
           command: |
             aws cloudformation --region us-east-1 list-exports > cluster.txt
             cat cluster.txt
-            if [ $(grep -i "eksctl-capstoneproject" cluster.txt | wc -l) -ge 1 ]
+            if [ $(grep -i "aj-cluster" cluster.txt | wc -l) -ge 1 ]
               then
               echo "EKS Cluster already exists in environment"
               else
@@ -160,8 +160,8 @@ workflows:
   default:
     jobs:
       - build-docker-image
-      - deploy-docker-image:
-          requires: [build-docker-image]
+#      - deploy-docker-image:
+#          requires: [build-docker-image]
       - eks_delpoy:
           requires: [deploy-docker-image]
       - eks_app_deploy:
