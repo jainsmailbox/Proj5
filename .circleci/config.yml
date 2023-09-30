@@ -18,7 +18,7 @@ jobs:
             - v1-dependencies-{{ checksum "requirements.txt" }}
             - v1-dependencies-
       - run:
-          name: install dependencies
+          name: install dependencies1
           command: |
             python3 -m venv devops
             . devops/bin/activate
@@ -37,7 +37,7 @@ jobs:
   # Deploy docker           
   deploy-docker-image:           
     environment:
-      IMAGEVERSION: v2
+      IMAGEVERSION: v1
     docker:
       - image: circleci/golang:1.15
      
